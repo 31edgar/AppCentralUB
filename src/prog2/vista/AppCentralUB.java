@@ -1,6 +1,8 @@
 package prog2.vista;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class AppCentralUB extends JFrame{
     private JPanel panelCentralUB;
@@ -9,6 +11,10 @@ public class AppCentralUB extends JFrame{
     private JButton btnVisualitzarInformacioCentral;
     private JButton btnFinalitzarDia;
     private JButton btnGuardarICarregarDades;
+    private JPanel panellDadesMenuPrincipal;
+    private JLabel labelNDiaMenuPrincipal;
+    private JLabel labelDemandaMenuPrincipal;
+    private JLabel labelGuanysMenuPrincipal;
 
     public AppCentralUB(){
         setTitle("App Central UB");
@@ -16,6 +22,32 @@ public class AppCentralUB extends JFrame{
         setContentPane(panelCentralUB);
         setSize(800,600);
         setLocationRelativeTo(null);
+
+        // --------- ESCOLTADORS ----------------------------------------------------
+        // Gestió components
+        btnGestioComponentsCentral.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GestioComponentsVista gestio = new GestioComponentsVista();
+                gestio.setVisible(true);
+            }
+        });
+
+        // Visualitzar informació
+        btnVisualitzarInformacioCentral.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
+        // Finalitzar dia
+        btnFinalitzarDia.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
     }
 
     public static void main(String[] args) {
