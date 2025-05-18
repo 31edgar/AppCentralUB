@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class AppCentralUB extends JFrame{
+    // Atributs
     private JPanel panelCentralUB;
     private JLabel labelCentralUB;
     private JButton btnGestioComponentsCentral;
@@ -16,6 +17,7 @@ public class AppCentralUB extends JFrame{
     private JLabel labelDemandaMenuPrincipal;
     private JLabel labelGuanysMenuPrincipal;
 
+    // Constructor
     public AppCentralUB(){
         setTitle("App Central UB");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -37,7 +39,10 @@ public class AppCentralUB extends JFrame{
         btnVisualitzarInformacioCentral.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                /*
+                VisualitzarInformacioVista visualitzar = new VisualitzarInformacioVista();
+                visualitzar.setVisible(true);
+                 */
             }
         });
 
