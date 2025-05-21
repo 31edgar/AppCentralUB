@@ -30,6 +30,7 @@ public class FrmVisualitzarInformacio extends JDialog{
             public void actionPerformed(ActionEvent e) {
                 int index = cmboxOpcionsVisualitzar.getSelectedIndex();
 
+                // Escollim què mostrem per pantalla
                 String text = switch (index) {
                     case 0 -> Adaptador.mostraEstatCentral();
                     case 1 -> Adaptador.mostraBitacola();

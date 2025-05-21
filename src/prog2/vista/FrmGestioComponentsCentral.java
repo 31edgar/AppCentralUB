@@ -33,9 +33,9 @@ public class FrmGestioComponentsCentral extends JDialog {
 
         setSize(800, 600);
         setLocationRelativeTo(parent);
-
         setContentPane(panelGestioComponentsCentral);
 
+        // Cada vegada que obrim la finestra, hem d'actualitzar les dades
         txtIntroduirInsercioBarresControl.setText(String.valueOf((int)Adaptador.getInsercioBarres()));
         sldBarresControl.setValue((int)Adaptador.getInsercioBarres());
 

@@ -48,8 +48,6 @@ public class AppCentralUB extends JFrame{
 
         // --------- ESCOLTADORS ----------------------------------------------------
 
-
-
         // Visualitzar informació
         btnVisualitzarInformacioCentral.addActionListener(new ActionListener() {
             @Override
@@ -60,6 +58,7 @@ public class AppCentralUB extends JFrame{
             }
         });
 
+        // Gestionar components central
         btnGestioComponentsCentral.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -69,17 +68,22 @@ public class AppCentralUB extends JFrame{
             }
         });
 
+        // Finalitzar dia
         btnFinalitzarDia.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                // Finalitzem el dia i guardem la bitàcola del dia
                 String text = Adaptador.finalitzaDia(demandaPotencia);
 
+                // Generem la demanda
                 demandaPotencia = generaDemandaPotencia();
+
+                // Actualitzem les dades
                 demanda.setText(String.valueOf(demandaPotencia));
                 dia.setText(String.valueOf(Adaptador.getDia()));
                 guanys.setText(String.valueOf(Adaptador.getGuanysAcumulats()));
 
-
+                // Mostrem la bitàcola del dia
                 JOptionPane.showMessageDialog(
                         null,
                         text,
