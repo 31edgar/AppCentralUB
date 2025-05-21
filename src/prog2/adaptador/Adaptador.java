@@ -1,6 +1,7 @@
 package prog2.adaptador;
 
 import java.io.*;
+import java.util.ArrayList;
 
 import prog2.model.Dades;
 import prog2.vista.*;
@@ -34,6 +35,42 @@ public class Adaptador {
      */
     public static String finalitzaDia(float demandaPotencia) {
         return dades.finalitzaDia(demandaPotencia).toString();
+    }
+
+    /**
+     * Obté els guanys acumulats.
+     *
+     * @return Els guanys acumulats.
+     */
+    public static float getGuanysAcumulats() {
+        return dades.getGuanysAcumulats();
+    }
+
+    /**
+     * Obté l'estat de les bombes
+     *
+     * @return Estats
+     */
+    public static ArrayList<Boolean> getEstatBombes() {
+        return dades.getEstatBombes();
+    }
+
+    /**
+     * Obté si el reactor està activat
+     *
+     * @return Activat
+     */
+    public static boolean isReactorActivat() {
+        return dades.isReactorActivat();
+    }
+
+    /**
+     * Obté el dia.
+     *
+     * @return El dia.
+     */
+    public static int getDia() {
+        return dades.getDia();
     }
 
     /**

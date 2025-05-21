@@ -34,6 +34,20 @@ public class SistemaRefrigeracio implements InComponent, Serializable {
     }
 
     /**
+     * Retorna un arrayList amb l'estat de cada bomba
+     */
+    public ArrayList<Boolean> getEstatBombes() {
+        ArrayList<Boolean> estats = new ArrayList<>();
+
+        for (BombaRefrigerant bomba : bombesRefrigerants) {
+            if (bomba.getActivat()) estats.add(true);
+            else estats.add(false);
+        }
+
+        return estats;
+    }
+
+    /**
      * Afegeix una bomba al sistema de refrigeració.
      *
      * @param b La bomba a afegir.

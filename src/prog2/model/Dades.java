@@ -3,6 +3,7 @@ package prog2.model;
 import prog2.vista.CentralUBException;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -78,7 +79,32 @@ public class Dades implements InDades, Serializable {
         this.sistemaRefrigeracio.desactiva();
     }
 
+
+
     // Getters i Setters
+    /**
+     * Obté si el reactor està activat o no.
+     * @return activat.
+     */
+    public boolean isReactorActivat() {
+        return reactor.getActivat();
+    }
+
+    /**
+     * Obté l'estat de les bombes.
+     * @return Estats.
+     */
+    public ArrayList<Boolean> getEstatBombes() {
+        return sistemaRefrigeracio.getEstatBombes();
+    }
+
+    /**
+     * Obté el dia.
+     * @return Dia.
+     */
+    public int getDia() {
+        return this.dia;
+    }
 
     /**
      * Obté el grau d'inserció de les barres de control.
@@ -240,9 +266,19 @@ public class Dades implements InDades, Serializable {
         float percentatgeDemandaSatisfeta = (potencia/demandaPotencia) * 100;
 
         // Actualitzem els guanys acumulats
-        guanysAcumulats += benefici - penalitzacio - costOperatiu;
+        guanysAcumulats = guanysAcumulats + benefici - penalitzacio - costOperatiu;
 
-        return new PaginaEconomica(dia, demandaPotencia, benefici, percentatgeDemandaSatisfeta, potencia, penalitzacio, costOperatiu, guanysAcumulats);
+        // DEBUG
+        System.out.println("Demanda: " + demandaPotencia);
+        System.out.println("Potencia: " + potencia);
+        System.out.println("Benefici: " + benefici);
+        System.out.println("Penalitzacio: " + penalitzacio);
+        System.out.println("Cost operatiu: " + costOperatiu);
+        System.out.println("Guanys acumulats: " + guanysAcumulats);
+
+
+
+        return new PaginaEconomica(dia, demandaPotencia, potencia, percentatgeDemandaSatisfeta, benefici, penalitzacio, costOperatiu, guanysAcumulats);
     }
 
     /**

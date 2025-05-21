@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="prog2.vista.FrmGestioComponentsCentral">
+  <grid id="27dc6" binding="panelGestioComponentsCentral" layout-manager="GridLayoutManager" row-count="17" column-count="11" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="630" height="452"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="afc7f" class="javax.swing.JLabel" binding="etGestioComponents">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="11" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Gestió dels components de la central"/>
+        </properties>
+      </component>
+      <component id="95a20" class="javax.swing.JSlider" binding="sldBarresControl">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="11" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="44a6f" class="javax.swing.JLabel" binding="etBarresControl">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="11" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Barres de control"/>
+        </properties>
+      </component>
+      <hspacer id="6ac2b">
+        <constraints>
+          <grid row="15" column="0" row-span="1" col-span="11" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <component id="1fa34" class="javax.swing.JLabel" binding="etComponents">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="11" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Activar i desactivar components"/>
+        </properties>
+      </component>
+      <component id="d9124" class="javax.swing.JCheckBox" binding="checkBomba0">
+        <constraints>
+          <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Bomba (Id: 0)"/>
+        </properties>
+      </component>
+      <component id="65c72" class="javax.swing.JButton" binding="btnIntroduirInsercioBarresControl">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="11" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Inserir percentatge"/>
+        </properties>
+      </component>
+      <component id="3064d" class="javax.swing.JCheckBox" binding="checkReactor">
+        <constraints>
+          <grid row="10" column="0" row-span="1" col-span="11" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Reactor"/>
+        </properties>
+      </component>
+      <component id="26983" class="javax.swing.JButton" binding="btnAplicarModificacions">
+        <constraints>
+          <grid row="16" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Aplicar"/>
+        </properties>
+      </component>
+      <component id="d24e3" class="javax.swing.JButton" binding="btnCancelarModificacions">
+        <constraints>
+          <grid row="16" column="4" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Cancelar"/>
+        </properties>
+      </component>
+      <component id="9befa" class="javax.swing.JTextField" binding="txtIntroduirInsercioBarresControl">
+        <constraints>
+          <grid row="3" column="0" row-span="2" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="659e4" class="javax.swing.JCheckBox" binding="checkBomba1">
+        <constraints>
+          <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Bomba (Id: 1)"/>
+        </properties>
+      </component>
+      <component id="4d994" class="javax.swing.JCheckBox" binding="checkBomba2">
+        <constraints>
+          <grid row="9" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Bomba (Id: 2)"/>
+        </properties>
+      </component>
+      <component id="a4b85" class="javax.swing.JCheckBox" binding="checkBomba3">
+        <constraints>
+          <grid row="9" column="3" row-span="1" col-span="7" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Bomba (Id: 3)"/>
+        </properties>
+      </component>
+      <component id="c16f4" class="javax.swing.JList" binding="listBombesForaDeServei">
+        <constraints>
+          <grid row="13" column="0" row-span="1" col-span="11" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <enabled value="true"/>
+        </properties>
+      </component>
+      <component id="65daf" class="javax.swing.JLabel" binding="etBombesForaDeServei">
+        <constraints>
+          <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Fora de servei:"/>
+        </properties>
+      </component>
+      <vspacer id="7a8c5">
+        <constraints>
+          <grid row="11" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="3c81b">
+        <constraints>
+          <grid row="14" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="899a">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="13232">
+        <constraints>
+          <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+    </children>
+  </grid>
+</form>
