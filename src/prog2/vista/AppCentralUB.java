@@ -65,6 +65,7 @@ public class AppCentralUB extends JFrame{
                 FrmGestioComponentsCentral gestioComponents = new FrmGestioComponentsCentral(AppCentralUB.this);
                 gestioComponents.setLocationRelativeTo(null);
                 gestioComponents.setVisible(true);
+                dispose();
             }
         });
 
@@ -92,6 +93,16 @@ public class AppCentralUB extends JFrame{
                 );
             }
         });
+
+        // Guardar/Carregar Dades
+        btnGuardarICarregarDades.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                FrmGuardarCarregarDades guardarCarregarDades = new FrmGuardarCarregarDades(AppCentralUB.this);
+                guardarCarregarDades.setLocationRelativeTo(null);
+                guardarCarregarDades.setVisible(true);
+            }
+        });
     }
 
     private float generaDemandaPotencia(){
@@ -104,6 +115,10 @@ public class AppCentralUB extends JFrame{
         else
             return valor;
     }
+
+    // getters i setters per guardar/carregar potència
+    public float getDemandaPotencia() {return demandaPotencia;}
+    public void setDemandaPotencia(float demandaActualitzada) {this.demandaPotencia = demandaActualitzada;}
 
 
     public static void main(String[] args) {
