@@ -35,6 +35,7 @@ public class AppCentralUB extends JFrame{
     public AppCentralUB(){
         variableNormal = new VariableNormal(VAR_NORM_MEAN, VAR_NORM_STD, VAR_NORM_SEED);
         demandaPotencia = generaDemandaPotencia();
+        Adaptador.setDemandaInicial(demandaPotencia);
 
         setTitle("App Central UB");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -65,7 +66,6 @@ public class AppCentralUB extends JFrame{
                 FrmGestioComponentsCentral gestioComponents = new FrmGestioComponentsCentral(AppCentralUB.this);
                 gestioComponents.setLocationRelativeTo(null);
                 gestioComponents.setVisible(true);
-                dispose();
             }
         });
 
@@ -80,6 +80,7 @@ public class AppCentralUB extends JFrame{
                 demandaPotencia = generaDemandaPotencia();
 
                 // Actualitzem les dades
+                Adaptador.setDemandaActual(demandaPotencia);
                 demanda.setText(String.valueOf(demandaPotencia));
                 dia.setText(String.valueOf(Adaptador.getDia()));
                 guanys.setText(String.valueOf(Adaptador.getGuanysAcumulats()));
@@ -98,6 +99,7 @@ public class AppCentralUB extends JFrame{
         btnGuardarICarregarDades.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                Adaptador.setDemandaActual(demandaPotencia); // Guardem la demanda abans d'actualitzar
                 FrmGuardarCarregarDades guardarCarregarDades = new FrmGuardarCarregarDades(AppCentralUB.this);
                 guardarCarregarDades.setLocationRelativeTo(null);
                 guardarCarregarDades.setVisible(true);
@@ -107,18 +109,17 @@ public class AppCentralUB extends JFrame{
 
     private float generaDemandaPotencia(){
         float valor = Math.round(variableNormal.seguentValor());
-        if (valor > DEMANDA_MAX)
-            return DEMANDA_MAX;
+        if (valor > DEMANDA_MAX){
+            return DEMANDA_MAX;}
         else
-        if (valor < DEMANDA_MIN)
-            return DEMANDA_MIN;
-        else
-            return valor;
+        if (valor < DEMANDA_MIN){
+            return DEMANDA_MIN;}
+        else{
+            return valor;}
     }
 
-    // getters i setters per guardar/carregar potència
-    public float getDemandaPotencia() {return demandaPotencia;}
-    public void setDemandaPotencia(float demandaActualitzada) {this.demandaPotencia = demandaActualitzada;}
+    // Per poder actualitzar el text un cop hàgim carregat una central
+    public void setDemandaText(){this.demanda.setText(String.valueOf(Adaptador.getDemandaActual()));}
 
 
     public static void main(String[] args) {

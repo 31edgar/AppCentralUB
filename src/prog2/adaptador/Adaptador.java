@@ -191,11 +191,22 @@ public class Adaptador {
     /**
      * Calcula la demanda satisfeta per la central.
      *
-     * @param demandaPotencia La demanda de potència que s'ha de satisfer.
      * @return Un array amb els valors de la demanda satisfeta.
      */
-    public static float[] mostraDemandaSatisfeta(float demandaPotencia) {
-        return dades.demandaSatisfeta(demandaPotencia);
+    public static String mostraDemandaSatisfeta() {
+
+        if (getDia() == 1){
+            float[] llista = dades.demandaSatisfeta(getDemandaInicial());
+            return ("- Demanda de potència actual: " + llista[0] +
+                    "\n- Potència generada (amb la configuració actual): " + llista[1] +
+                    "\n- Percentatge de demanda satisfeta: " + llista[2] + " %");
+        }
+        else{
+            float[] llista = dades.demandaSatisfeta(getDemandaActual());
+            return ("- Demanda de potència actual: " + llista[0] +
+                    "\n- Potència generada (amb la configuració actual): " + llista[1] +
+                    "\n- Percentatge de demanda satisfeta: " + llista[2] + " %");
+        }
     }
 
     // Mètodes per al tractament de dades (guardar i carregar l'estat)
@@ -208,7 +219,6 @@ public class Adaptador {
      */
     public static void guardaDades(String camiDesti) throws CentralUBException {
         File fitxer = new File(camiDesti);
-
         try {
             FileOutputStream fout = new FileOutputStream(fitxer);
             ObjectOutputStream oos = new ObjectOutputStream(fout);
@@ -235,4 +245,15 @@ public class Adaptador {
             throw new RuntimeException(e);
         }
     }
+
+    public static void setDemandaActual(float demandaPotencia) throws CentralUBException {
+        dades.setDemandaActual(demandaPotencia);
+    }
+    public static float getDemandaActual() {return dades.getDemandaActual();}
+
+    public static void setDemandaInicial(float demandaPotencia) throws CentralUBException {
+        dades.setDemandaInicial(demandaPotencia);
+    }
+    public static float getDemandaInicial() {return dades.getDemandaInicial();}
+
 }

@@ -9,29 +9,27 @@ import java.io.File;
 import java.io.Serializable;
 
 public class FrmGuardarCarregarDades extends JDialog implements Serializable {
+
+    private JComboBox cmbxOption;
+    private JPanel panel1;
+    private JButton goButton;
+    private final JFileChooser fileChooser;
+
     public FrmGuardarCarregarDades(JFrame parent) {
+
         super(parent, "Guardar i carregar dades", true);
 
         setSize(300, 200);
         setLocationRelativeTo(parent);
 
-        // Creem objectes
-        JPanel panelOpcionsVisualitzar = new JPanel();
-        JComboBox<String> cmboxOpcionsVisualitzar = new JComboBox<>(new String[]{"Guardar dades de la central actual", "Carregar dades d'una central guardada"});
-        JButton btnEnter = new JButton("Enter");
-        JFileChooser fileChooser = new JFileChooser();
-
-        // Afegim els objectes al panel
-        panelOpcionsVisualitzar.add(cmboxOpcionsVisualitzar);
-        panelOpcionsVisualitzar.add(btnEnter);
-
-        setContentPane(panelOpcionsVisualitzar);
+        setContentPane(panel1);
+        fileChooser = new JFileChooser();
 
         // Usuari li dona a "enter"
-        btnEnter.addActionListener(new ActionListener() {
+        goButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int index = cmboxOpcionsVisualitzar.getSelectedIndex();
+                int index = cmbxOption.getSelectedIndex();
                 File file;
 
                 switch (index) {
@@ -51,16 +49,19 @@ public class FrmGuardarCarregarDades extends JDialog implements Serializable {
                             JOptionPane.showMessageDialog(null, "Central carregada correctament.");
                             dispose();
 
+                            // Actualitzem la GUI (guardant la demanda)
                             AppCentralUB appCentralUB = new AppCentralUB();
+                            appCentralUB.setDemandaText();
                             appCentralUB.setVisible(true);
                         }
                         break;
 
                     default:
                         JOptionPane.showMessageDialog(null, "Opció no reconeguda");
+                    }
                 }
-            }
-        });
+            });
+        }
     }
-}
+
 

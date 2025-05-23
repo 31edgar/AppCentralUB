@@ -34,15 +34,17 @@ public class Dades implements InDades, Serializable {
     public final static float PENALITZACIO_EXCES_POTENCIA = 250;
 
     // Atributs
-    private VariableUniforme variableUniforme;
+    private final VariableUniforme variableUniforme;
     private float insercioBarres;
-    private Reactor reactor;
-    private SistemaRefrigeracio sistemaRefrigeracio;
-    private GeneradorVapor generadorVapor;
-    private Turbina turbina;
-    private Bitacola bitacola;
+    private final Reactor reactor;
+    private final SistemaRefrigeracio sistemaRefrigeracio;
+    private final GeneradorVapor generadorVapor;
+    private final Turbina turbina;
+    private final Bitacola bitacola;
     private int dia;
     private float guanysAcumulats;
+    private float demandaActual;
+    private float demandaInicial;
 
     /**
      * Constructor per inicialitzar els atributs de la classe.
@@ -128,6 +130,10 @@ public class Dades implements InDades, Serializable {
         this.insercioBarres = insercioBarres;
     }
 
+    public float getDemandaActual() {return this.demandaActual;}
+    public void setDemandaActual(float demandaActual) throws CentralUBException {this.demandaActual = demandaActual;}
+    public float getDemandaInicial() {return this.demandaInicial;}
+    public void setDemandaInicial(float demandaPotencia) {this.demandaInicial = demandaPotencia;}
     // Reactor
 
     /**
@@ -342,4 +348,6 @@ public class Dades implements InDades, Serializable {
         bitacolaDia.afegeixPagina(paginaIncidencies);
         return bitacolaDia;
     }
+
+
 }
